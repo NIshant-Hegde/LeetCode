@@ -1,15 +1,10 @@
 class Solution:
     def numberGame(self, nums: List[int]) -> List[int]:
-        turns = len(nums)//2
-        out = []
-        
         nums.sort()
         
-        i, j = 0, 1
-        while turns > 0:
-            out.append(nums[j])
-            out.append(nums[i])
-            i, j = i+2, j+2
-            turns-=1
-            
-        return out
+        for i in range(1, len(nums), 2):
+            temp = nums[i - 1]
+            nums[i - 1] = nums[i]
+            nums[i] = temp
+        
+        return nums
