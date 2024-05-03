@@ -1,13 +1,14 @@
 class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
-        size = ord('z') + 1
-        hmap = [0] * size
-        out = 0
+        hmp = [0] * 150
+
+        for s in stones:
+            hmp[ord(s)] += 1
+
+        count = 0
+        for j in jewels:
+            print(j, ord(j))
+            count += hmp[ord(j)]
+
+        return count
         
-        for char in stones:
-            hmap[ord(char)] += 1
-            
-        for c in jewels:
-            out += hmap[ord(c)]
-            
-        return out
