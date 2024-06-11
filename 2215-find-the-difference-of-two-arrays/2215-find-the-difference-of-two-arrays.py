@@ -2,14 +2,8 @@ class Solution:
     def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
         hmap = [0] * 3000
         
-        n1 = set()
-        n2 = set()
-        
-        for ele in nums1:
-            n1.add(ele)
-            
-        for ele in nums2:
-            n2.add(ele) 
+        n1 = set(nums1)
+        n2 = set(nums2)
         
         for ele in n1:
             hmap[ele + 1000] += 1
