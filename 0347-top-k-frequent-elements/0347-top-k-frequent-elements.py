@@ -1,14 +1,9 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        freqDict = {}
-        seen = []
+        freqDict = defaultdict(int)
         
         for n in nums:
-            if n in seen:
-                freqDict[n] += 1
-            else:
-                seen.append(n)
-                freqDict[n] = 1
+            freqDict[n] += 1
             
         Keys = list(freqDict.keys())
         Values = list(freqDict.values())
