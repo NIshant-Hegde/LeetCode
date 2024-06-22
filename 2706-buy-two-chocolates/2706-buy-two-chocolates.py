@@ -1,8 +1,14 @@
 class Solution:
     def buyChoco(self, prices: List[int], money: int) -> int:
-        sortedPrices = sorted(prices)
+        l1, l2 = 0, 0
         
-        if (sortedPrices[0] + sortedPrices[1]) > money:
+        l1 = min(prices)
+        
+        prices[prices.index(l1)] = 1000
+        
+        l2 = min(prices)
+        
+        if (l1 + l2) > money:
             return money
         else:
-            return money - (sortedPrices[0] + sortedPrices[1])
+            return money - (l1 + l2)
