@@ -9,5 +9,4 @@ class Solution:
             if s[i] != " ":
                 length+=1
                 
-            
         return length
